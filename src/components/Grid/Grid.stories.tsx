@@ -24,15 +24,32 @@ export const HelloWorld = Template.bind({});
 
 let sections: GridProps["sections"] = [
   {
-    cover: 50,
+    cover: 30,
     content: <div style={{ width: "100%", height: "100%", background: "#F8D800" }}>First Content</div>,
     align: 'bottom'
   },
   {
     cover: 50,
     content: <div style={{ width: "100%", height: "100%", background: "#0396FF" }}>Second Content</div>,
-    align: 'top'
-  }
+    align: 'top',
+    subSection: [
+      {
+        cover: 30,
+        content: <div style={{ width: "100%", height: "100%", background: "#C9E4DE" }}>subSection first Content</div>,
+        align: "bottom"
+      },
+      {
+        cover: 70,
+        content: <div style={{ width: "100%", height: "100%", background: "#F2C6DE" }}>subSection second Content</div>,
+        align: "bottom"
+      }
+    ]
+  },
+  {
+    cover: 20,
+    content: <div style={{ width: "100%", height: "100%", background: "#DEDAF4" }}>Third Content</div>,
+    align: 'bottom'
+  },
 ];
 
 HelloWorld.args = {

@@ -12,6 +12,9 @@ const Grid: React.FC<GridProps> = ({ alignment, sections }) => {
           style={{ flexBasis: `${section.cover}%`, flexGrow: 0, flexShrink: 0, height: '100%' }}
         >
           {section.content}
+          {section.subSection && (
+            <Grid alignment={alignment} sections={section.subSection} />
+          )}
         </div>
       ))}
     </div>

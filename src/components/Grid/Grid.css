@@ -11,22 +11,3 @@
     align-items: stretch;
     height: 100%;
 }
-
-.grid-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;  /* Ensure it takes full height */
-}
-
-.grid-item.top {
-    align-items: flex-start;
-}
-
-.grid-item.middle {
-    align-items: center;
-}
-
-.grid-item.bottom {
-    align-items: flex-end;
-}

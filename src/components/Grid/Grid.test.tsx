@@ -5,6 +5,6 @@ import Grid from "./Grid";
 
 describe("Grid", () => {
   test("renders the Grid component", () => {
-    render(<Grid />);
+    render(<Grid sections={[]} />);
   });
 });

@@ -133,3 +133,23 @@ Spacer.args = {
   alignment: "horizontal",
   sections: spacerSections
 };
+
+export const BreakPoints = Template.bind({});
+
+let mdSection: GridSectionProps[] = [
+  {
+    cover: 40,
+    content: <div style={{ width: "100%", height: "100%", background: "#F8D800" }}>Left Content</div>,
+    align: 'bottom'
+  },
+  {
+    cover: 60,
+    align: 'bottom'
+  },
+];
+
+BreakPoints.args = {
+  alignment: "horizontal",
+  sections: defaultSection,
+  mdSection: mdSection
+};

@@ -11,6 +11,13 @@ export interface GridProps {
     * The list of sections
     */
     sections: GridSectionProps[];
+    xsSection?: GridSectionProps[];
+    smSection?: GridSectionProps[];
+    mdSection?: GridSectionProps[];
+    lgSection?: GridSectionProps[];
+    xlSection?: GridSectionProps[];
+    xxlSection?: GridSectionProps[];
+    xxxlSection?: GridSectionProps[];
 }
 
 export interface SubSection {
@@ -55,4 +62,13 @@ export interface GridSectionProps {
      */
     subSection?: SubSection[]
     // TODO: Add `xAlign` and `yAlign`
+    xsSectionDisplay?: Display;
+    smSectionDisplay?: Display;
+    mdSectionDisplay?: Display;
+    lgSectionDisplay?: Display;
+    xlSectionDisplay?: Display;
+    xxlSectionDisplay?: Display;
+    xxxlSectionDisplay?: Display;
 };
+
+export type Display = "show" | "hide" | "default";

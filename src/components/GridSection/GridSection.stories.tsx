@@ -43,9 +43,9 @@ let eightyPercentSection: GridSectionProps = {
 
 eightyPercent.args = eightyPercentSection;
 
-export const mdOnlySection = Template.bind({});
+export const BreakPointSection = Template.bind({});
 
-let mdOnlySectionProps: GridSectionProps = {
+let BreakPointSectionProps: GridSectionProps = {
   cover: 80,
   content: <div style={{ width: "100%", height: "40%", background: "#F8D800" }}>First Content</div>,
   align: 'bottom',
@@ -58,4 +58,4 @@ let mdOnlySectionProps: GridSectionProps = {
   xxxlSectionDisplay: "hide",
 };
 
-mdOnlySection.args = mdOnlySectionProps;
+BreakPointSection.args = BreakPointSectionProps;

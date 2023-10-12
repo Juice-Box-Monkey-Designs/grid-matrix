@@ -41,7 +41,6 @@ const GridSection: React.FC<GridSectionProps> = (props) => {
       display = "default";
       break;
   }
-  console.log("Section breakpoint: ", breakpoint);
   if (display === "hide") return null;
 
   return (

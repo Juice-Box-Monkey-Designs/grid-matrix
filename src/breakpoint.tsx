@@ -1,29 +1,41 @@
 import { createContext, useEffect, useState, useContext } from "react";
-type BreakpointValue = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl" | "default";
+import { BreakpointValue } from "./types";
 
 const BreakpointContext = createContext<BreakpointValue | undefined>(undefined);
+
+enum Breakpoints {
+    XS = 320,
+    SM = 640,
+    MD = 768,
+    LG = 1024,
+    XL = 1280,
+    XXL = 1536,
+    XXXL = 1537,
+}
 
 export function BreakpointProvider({ children }) {
     const [breakpoint, setBreakpoint] = useState(() => {
         const width = window.innerWidth;
-        if (width < 320) return "xs";
-        if (width < 640) return "sm";
-        if (width < 768) return "md";
-        if (width < 1024) return "lg";
-        if (width < 1280) return "xl";
-        if (width < 1536) return "xxl";
+        if (width < Breakpoints.XS) return "xs";
+        if (width < Breakpoints.SM) return "sm";
+        if (width < Breakpoints.MD) return "md";
+        if (width < Breakpoints.LG) return "lg";
+        if (width < Breakpoints.XL) return "xl";
+        if (width < Breakpoints.XXL) return "xxl";
+        if (width >= Breakpoints.XXXL) return "xxxl";
         return "default";
     });
 
     useEffect(() => {
         const updateBreakpoint = () => {
             const width = window.innerWidth;
-            if (width < 320) setBreakpoint("xs");
-            else if (width < 640) setBreakpoint("sm");
-            else if (width < 768) setBreakpoint("md");
-            else if (width < 1024) setBreakpoint("lg");
-            else if (width < 1280) setBreakpoint("xl");
-            else if (width < 1536) setBreakpoint("xxl");
+            if (width < Breakpoints.XS) setBreakpoint("xs");
+            else if (width < Breakpoints.SM) setBreakpoint("sm");
+            else if (width < Breakpoints.MD) setBreakpoint("md");
+            else if (width < Breakpoints.LG) setBreakpoint("lg");
+            else if (width < Breakpoints.XL) setBreakpoint("xl");
+            else if (width < Breakpoints.XXL) setBreakpoint("xxl");
+            else if (width >= Breakpoints.XXXL) setBreakpoint("xxxl");
             else setBreakpoint("default");
         };
 

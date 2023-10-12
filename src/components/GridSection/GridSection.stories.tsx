@@ -43,7 +43,7 @@ let eightyPercentSection: GridSectionProps = {
 
 eightyPercent.args = eightyPercentSection;
 
-export const BreakPointSection = Template.bind({});
+export const BreakPoint = Template.bind({});
 
 let BreakPointSectionProps: GridSectionProps = {
   cover: 80,
@@ -58,4 +58,4 @@ let BreakPointSectionProps: GridSectionProps = {
   xxxlSectionDisplay: "hide",
 };
 
-BreakPointSection.args = BreakPointSectionProps;
+BreakPoint.args = BreakPointSectionProps;

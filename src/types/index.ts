@@ -39,6 +39,14 @@ export interface GridProps {
      *  Section to display on screens greater than 1536px
      */
     xxxlSection?: GridSectionProps[];
+    /**
+     * Custom class name for additional styling
+     */
+    className?: string;
+    /**
+     * Inline styles for additional styling
+     */
+    style?: React.CSSProperties;
 }
 
 export interface SubSection {

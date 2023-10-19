@@ -47,6 +47,11 @@ export interface GridProps {
      * Inline styles for additional styling
      */
     style?: React.CSSProperties;
+    /**
+     *  Support the CSS transform property on the top component.
+     *  This can be a combination of rotation, scaling, translating, skewing, and more.
+     */
+    transform?: string;
 }
 
 export interface SubSection {

@@ -184,3 +184,23 @@ CustomStyle.args = {
   sections: customStyleSection,
   style: { "box-shadow": "1em 1em turquoise, -1em 0 .4em teal" },
 };
+
+export const Transform = Template.bind({});
+let transformSection: GridSectionProps[] = [
+  {
+    cover: 50,
+    content: <div style={{ width: "100%", height: "100%", background: "#B2FFFF" }}>Left Content</div>,
+    align: 'bottom'
+  },
+  {
+    cover: 50,
+    content: <div style={{ width: "100%", height: "100%", background: "#D9FFFF" }}>Right Content</div>,
+    align: 'bottom'
+  },
+];
+
+Transform.args = {
+  alignment: "horizontal",
+  sections: transformSection,
+  transform: "rotate(20deg) scale(0.5)"
+};

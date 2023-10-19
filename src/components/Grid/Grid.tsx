@@ -19,6 +19,8 @@ const GridComponent: React.FC<GridProps> = ({
   xlSection,
   xxlSection,
   xxxlSection,
+  className,
+  style,
 }: GridProps) => {
 
   const breakpoint = useBreakpoint();
@@ -53,7 +55,7 @@ const GridComponent: React.FC<GridProps> = ({
   }
 
   return (
-    <div className={`grid-container ${alignment}`}>
+    <div className={`grid-container ${alignment} ${className}`} style={style} >
       {currentSections && currentSections.map((section, index) => (
         <GridSection {...section} parentAlignment={alignment} id={index} />
       ))}

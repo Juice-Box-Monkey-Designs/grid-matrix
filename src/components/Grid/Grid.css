@@ -11,3 +11,8 @@
   align-items: stretch;
   height: 100%;
 }
+
+/* Storybook stylings */
+.story-custom-style {
+  background: content-box radial-gradient(rgb(81, 149, 170), skyblue);
+}

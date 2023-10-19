@@ -140,7 +140,7 @@ export const BreakPoints = Template.bind({});
 let mdSection: GridSectionProps[] = [
   {
     cover: 40,
-    content: <div style={{ width: "100%", height: "100%", background: "#F8D800" }}>Left Content</div>,
+    content: <div style={{ width: "100%", height: "100%", background: "#52B2BF" }}>Left Content</div>,
     align: 'bottom'
   },
   {
@@ -158,8 +158,8 @@ BreakPoints.args = {
 export const CustomClass = Template.bind({});
 let customSection: GridSectionProps[] = [
   {
-    cover: 40,
-    content: <div style={{ width: "100%", height: "100%", background: "#F8D800" }}>Left Content</div>,
+    cover: 50,
+    content: <div style={{ width: "100%", height: "100%", background: "#B2FFFF" }}>Left element</div>,
     align: 'bottom'
   },
 ];
@@ -173,8 +173,8 @@ CustomClass.args = {
 export const CustomStyle = Template.bind({});
 let customStyleSection: GridSectionProps[] = [
   {
-    cover: 40,
-    content: <div style={{ width: "100%", height: "100%", background: "#F8D800" }}>Left Content</div>,
+    cover: 50,
+    content: <div style={{ width: "100%", height: "100%", background: "#B2FFFF" }}>Left Content</div>,
     align: 'bottom'
   },
 ];
@@ -182,5 +182,5 @@ let customStyleSection: GridSectionProps[] = [
 CustomStyle.args = {
   alignment: "horizontal",
   sections: customStyleSection,
-  style: { "box-shadow": " 3px 3px red, -1em 0 .4em teal" },
+  style: { "box-shadow": "1em 1em turquoise, -1em 0 .4em teal" },
 };

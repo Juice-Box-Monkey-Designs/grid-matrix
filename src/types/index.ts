@@ -88,9 +88,25 @@ export interface GridSectionProps {
      */
     parentAlignment?: parentAlignment;
     /**
-     * Alignment placement inside grid
+     * Alignment placement inside gridk
      */
-    align: 'top' | 'middle' | 'bottom';
+    align?:
+    'center-top' | 'middle-top' | 'left-top' | 'right-top' |
+    'center-middle' |  'middle-middle' |  'left-middle' |  'right-middle' |
+    'center-center' | 'middle-center' | 'left-center' | 'right-center' | 
+    'center-bottom' | 'middle-bottom' | 'left-bottom' | 'right-bottom' | 'top' | 'middle' | 'center' | 'bottom';
+
+    /**
+     * Y Axis Alignment placement inside grid
+     * (warning this will override `align`)
+     */
+    yAlign?: yAlignValue;
+
+    /**
+     * X Axis Alignment placement inside grid
+     * (warning this will override `align`)
+     */
+    xAlign?: xAlignValue;
     /**
      * Inside grid section support (Use for Grid inside Grid cases)
      */
@@ -129,3 +145,7 @@ export interface GridSectionProps {
 export type Display = "show" | "hide" | "default";
 
 export type BreakpointValue = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl" | "default";
+
+export type yAlignValue = 'top' | 'middle' | 'center' | 'bottom' | 'align';
+
+export type xAlignValue = 'left' | 'middle' | 'center' | 'right' | 'align';

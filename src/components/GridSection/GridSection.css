@@ -6,14 +6,23 @@
   /* Ensure it takes full height */
 }
 
-.grid-item.top {
+.grid-item.y-top {
   align-items: flex-start;
 }
 
-.grid-item.middle {
+.grid-item.y-middle,
+.grid-item.y-center {
   align-items: center;
 }
 
-.grid-item.bottom {
+.grid-item.y-bottom {
   align-items: flex-end;
+}
+
+.grid-item.x-left {
+  justify-content: left;
+}
+
+.grid-item.x-right {
+  justify-content: right;
 }

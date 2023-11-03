@@ -1,5 +1,5 @@
 import React, { useId } from "react";
-import { Display, GridSectionProps } from "../../types";
+import { Display, GridSectionProps, xAlignValue, yAlignValue } from "../../types";
 import "./GridSection.css"
 import Grid from "../Grid";
 import { useBreakpoint } from "../../breakpoint";
@@ -43,10 +43,36 @@ const GridSection: React.FC<GridSectionProps> = (props) => {
   }
   if (display === "hide") return null;
 
+  /**
+   * Alignment Support is part of 3
+   */
+  let xAlign: xAlignValue | undefined = "left";
+  let yAlign: yAlignValue | undefined = "top";
+
+  if (props.align) {
+    if (props.align.includes("-")) {
+      const splitAlign = props.align.split("-");
+      xAlign = splitAlign[0] as xAlignValue;
+      yAlign = splitAlign[1] as yAlignValue;
+    } else {
+      xAlign = 'center';
+      yAlign = props.align as yAlignValue;
+    }
+  }
+
+  if (props.yAlign && props.yAlign != 'align') {
+    yAlign = props.yAlign
+  }
+
+  if (props.xAlign && props.xAlign != 'align') {
+    xAlign = props.xAlign;
+  }
+
+
   return (
     <div
       key={uniqueKey}
-      className={`grid-item ${props.align}`}
+      className={`grid-item ${"x-" + xAlign} ${"y-" + yAlign}`}
       style={{ flexBasis: `${props.cover}%`, flexGrow: 0, flexShrink: 0, height: "100%" }}
     >
       {props.content &&

@@ -59,3 +59,15 @@ let BreakPointSectionProps: GridSectionProps = {
 };
 
 BreakPoint.args = BreakPointSectionProps;
+
+export const alignment = Template.bind({});
+
+let alignmentPercentSection: GridSectionProps = {
+  cover: 100,
+  content: <div style={{ width: "100px", height: "100px", background: "#F8D800" }}>Small Square</div>,
+  xAlign: 'align',
+  yAlign: 'align',
+};
+
+alignment.args = alignmentPercentSection;
+

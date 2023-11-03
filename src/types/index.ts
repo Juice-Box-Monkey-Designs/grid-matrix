@@ -88,7 +88,7 @@ export interface GridSectionProps {
      */
     parentAlignment?: parentAlignment;
     /**
-     * Alignment placement inside gridk
+     * Alignment placement inside grid
      */
     align?:
     'center-top' | 'middle-top' | 'left-top' | 'right-top' |

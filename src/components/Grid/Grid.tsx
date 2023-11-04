@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import { GridProps } from "../../types";
 import "./Grid.css"
 import GridSection from "../GridSection";
@@ -22,7 +22,11 @@ const GridComponent: React.FC<GridProps> = ({
   className,
   style,
   transform,
+  level,
+  id,
 }: GridProps) => {
+  let uniqueKey = useId();
+  if (id) { uniqueKey = uniqueKey + id }
 
   const breakpoint = useBreakpoint();
   let currentSections = sections;
@@ -57,11 +61,13 @@ const GridComponent: React.FC<GridProps> = ({
 
   const combinedStyle = {
     ...style,
-    ...(transform ? { transform } : {})
+    ...(transform ? { transform } : {}),
+    ...(level ? { zIndex: level, position: "relative" } : {})
   };
 
   return (
-    <div className={`grid-container ${alignment} ${className}`} style={combinedStyle} >
+    // @ts-ignore
+    <div key={uniqueKey} className={`grid-container ${alignment} ${className}`} style={combinedStyle} >
       {currentSections && currentSections.map((section, index) => (
         <GridSection {...section} parentAlignment={alignment} id={index} />
       ))}

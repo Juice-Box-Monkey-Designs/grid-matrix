@@ -3,6 +3,10 @@ import React from "react";
 export type parentAlignment = "horizontal" | "vertical";
 
 export interface GridProps {
+     /**
+     * Unique id
+     */
+    id?: number | string;
     /**
     * The direction the grid will display
     */
@@ -52,6 +56,20 @@ export interface GridProps {
      *  This can be a combination of rotation, scaling, translating, skewing, and more.
      */
     transform?: string;
+
+    /**
+     * Allow to define z-index level to component
+     * This can be used inside `StackedGrid` to specify on what level each one should render at
+     */
+    level?: number;
+}
+
+export interface GridWithLevelRequiredProps extends GridProps {
+    /**
+     * Allow to define z-index level to component
+     * This can be used inside `StackedGrid` to specify on what level each one should render at
+     */
+    level: number;
 }
 
 export interface SubSection {
@@ -140,6 +158,14 @@ export interface GridSectionProps {
      * Visibility of the section on screens greater than 1536px
      */
     xxxlSectionDisplay?: Display;
+};
+
+export interface StackedGridProps {
+    /**
+    * The list of grids to stack
+    * ATT: please specify `level` in each grid to render properly
+    */
+    grids: GridWithLevelRequiredProps[];
 };
 
 export type Display = "show" | "hide" | "default";

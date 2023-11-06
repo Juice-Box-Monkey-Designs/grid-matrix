@@ -28,23 +28,23 @@ export const twoBasic = Template.bind({});
 let twoBasicSection: StackedGridProps = {
   grids: [
     {
-      alignment: "vertical",
+      alignment: "horizontal",
       level: 1,
       sections: [
         {
-          cover: 50,
-          content: <div style={{ width: "100px", height: "100px", background: "#F8D800" }}>Bottom Content</div>,
+          cover: 60,
+          content: <div style={{ width: "100%", height: "100%", background: "rgba(248,216,0, 0.6)" }}>Bottom Content</div>,
           align: 'left-bottom'
         },
       ]
     },
     {
-      alignment: "vertical",
+      alignment: "horizontal",
       level: 2,
       sections: [
         {
-          cover: 50,
-          content: <div style={{ width: "100px", height: "100px", background: "#748729" }}>Top Content</div>,
+          cover: 60,
+          content: <div style={{ width: "100%", height: "100%", background: "rgb(116,135,41, 0.5)"}}>Top Content</div>,
           align: 'right-top'
         },
       ]

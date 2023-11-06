@@ -62,7 +62,7 @@ const GridComponent: React.FC<GridProps> = ({
   const combinedStyle = {
     ...style,
     ...(transform ? { transform } : {}),
-    ...(level ? { zIndex: level, position: "relative" } : {})
+    ...(level ? { zIndex: level } : {})
   };
 
   return (

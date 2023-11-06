@@ -26,7 +26,7 @@ const StackedGridComponent: React.FC<StackedGridProps> = ({
     <div style={combinedStyle}>
       {grids.map((grid, index) => (
         <div style={{ zIndex: grid.level, gridArea: `1 / 1 / 4 / 4`, width: "100%", height: "100%"}}>
-         <Grid {...grid} id={index} style={{...grid.style }} />
+         <Grid {...grid} id={index} />
         </div>
       ))}
     </div>

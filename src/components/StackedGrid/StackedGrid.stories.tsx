@@ -17,7 +17,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof StackedGrid> = (args) => {
   return (
-    <div style={{ width: "400px", height: "400px", background: "blue" }}>
+    <div style={{ width: "400px", height: "400px", background: "#b3b3ff" }}>
       <StackedGrid grids={args.grids} />
     </div>
   )
@@ -32,7 +32,7 @@ let twoBasicSection: StackedGridProps = {
       level: 1,
       sections: [
         {
-          cover: 60,
+          cover: 100,
           content: <div style={{ width: "100%", height: "100%", background: "rgba(248,216,0, 0.6)" }}>Bottom Content</div>,
           align: 'left-bottom'
         },
@@ -43,7 +43,10 @@ let twoBasicSection: StackedGridProps = {
       level: 2,
       sections: [
         {
-          cover: 60,
+          cover: 20,
+        },
+        {
+          cover: 80,
           content: <div style={{ width: "100%", height: "100%", background: "rgb(116,135,41, 0.5)"}}>Top Content</div>,
           align: 'right-top'
         },

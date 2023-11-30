@@ -182,7 +182,7 @@ let customStyleSection: GridSectionProps[] = [
 CustomStyle.args = {
   alignment: "horizontal",
   sections: customStyleSection,
-  style: { "box-shadow": "1em 1em turquoise, -1em 0 .4em teal" },
+  style: { "boxShadow": "1em 1em turquoise, -1em 0 .4em teal" },
 };
 
 export const Transform = Template.bind({});

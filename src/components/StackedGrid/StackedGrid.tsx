@@ -1,5 +1,5 @@
 import React from "react";
-import { StackedGridProps } from "../../types";
+import { StackedGridProps } from "../../types/index.types";
 // import "./StackedGrid.css"
 import Grid from "../Grid";
 

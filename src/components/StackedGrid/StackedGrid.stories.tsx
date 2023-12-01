@@ -4,7 +4,7 @@ import { object } from '@storybook/addon-knobs';
 import Grid from "../Grid";
 import GridSection from "../GridSection";
 import StackedGrid from "./StackedGrid";
-import { GridSectionProps, StackedGridProps } from "../../types";
+import { GridSectionProps, StackedGridProps } from "../../types/index.types";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

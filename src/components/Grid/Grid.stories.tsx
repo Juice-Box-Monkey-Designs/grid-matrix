@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { object } from '@storybook/addon-knobs';
 import Grid from "./Grid";
-import { GridProps, GridSectionProps } from "../../types";
+import { GridProps, GridSectionProps } from "../../types/index.types";
 import "./Grid.css";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

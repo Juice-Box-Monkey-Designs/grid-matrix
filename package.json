@@ -1,10 +1,10 @@
 {
   "name": "@jbmd/grid-matrix",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A helpful react grid component",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest"
@@ -40,6 +40,10 @@
     "react-dom": "^18.2.0",
     "rollup": "^3.29.4",
     "rollup-plugin-dts": "^6.0.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "@storybook/addon-knobs": "^7.0.2",
+    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.4.6",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
@@ -51,8 +55,6 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@storybook/addon-knobs": "^7.0.2",
-    "react-markdown": "^9.0.1",
-    "rollup-plugin-postcss": "^4.0.2"
+    "react-markdown": "^9.0.1"
   }
 }

@@ -1,5 +1,5 @@
-import { createContext, useEffect, useState, useContext } from "react";
-import { BreakpointValue } from "./types";
+import React, { createContext, useEffect, useState, useContext } from "react";
+import { BreakpointValue } from "./types/index.types";
 
 const BreakpointContext = createContext<BreakpointValue | undefined>(undefined);
 
@@ -13,6 +13,7 @@ enum Breakpoints {
     XXXL = 1537,
 }
 
+// @ts-ignore
 export function BreakpointProvider({ children }) {
     const [breakpoint, setBreakpoint] = useState(() => {
         const width = window.innerWidth;
@@ -46,6 +47,7 @@ export function BreakpointProvider({ children }) {
     }, []);
 
     return (
+        // @ts-ignore
         <BreakpointContext.Provider value={breakpoint} >
             {children}
         </BreakpointContext.Provider>

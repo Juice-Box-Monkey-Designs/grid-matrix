@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { object } from '@storybook/addon-knobs';
 import Grid from "../Grid";
 import GridSection from "./GridSection";
-import { GridSectionProps } from "../../types";
+import { GridSectionProps } from "../../types/index.types";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

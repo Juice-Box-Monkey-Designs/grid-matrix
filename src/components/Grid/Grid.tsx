@@ -1,5 +1,5 @@
 import React, { useId } from "react";
-import { GridProps } from "../../types";
+import { GridProps } from "../../types/index.types";
 import "./Grid.css"
 import GridSection from "../GridSection";
 import { BreakpointProvider, useBreakpoint } from "./../../breakpoint";

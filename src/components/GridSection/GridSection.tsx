@@ -1,5 +1,5 @@
 import React, { useId } from "react";
-import { Display, GridSectionProps, xAlignValue, yAlignValue } from "../../types";
+import { Display, GridSectionProps, xAlignValue, yAlignValue } from "../../types/index.types";
 import "./GridSection.css"
 import Grid from "../Grid";
 import { useBreakpoint } from "../../breakpoint";

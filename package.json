@@ -1,9 +1,10 @@
 {
-  "name": "grid-matrix",
-  "version": "0.0.1",
+  "name": "@jbmd/grid-matrix",
+  "version": "0.0.4",
   "description": "A helpful react grid component",
   "scripts": {
-    "rollup": "rollup -c",
+    "prepublishOnly": "npm run build",
+    "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest"
@@ -22,10 +23,12 @@
     "@storybook/addon-interactions": "^7.4.6",
     "@storybook/addon-links": "^7.4.6",
     "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/addons": "^7.6.1",
     "@storybook/blocks": "^7.4.6",
     "@storybook/react": "^7.4.6",
     "@storybook/react-webpack5": "^7.4.6",
     "@storybook/testing-library": "^0.2.2",
+    "@storybook/theming": "^7.6.1",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.25",
@@ -37,6 +40,10 @@
     "react-dom": "^18.2.0",
     "rollup": "^3.29.4",
     "rollup-plugin-dts": "^6.0.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "@storybook/addon-knobs": "^7.0.2",
+    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.4.6",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
@@ -48,6 +55,6 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@storybook/addon-knobs": "^7.0.2"
+    "react-markdown": "^9.0.1"
   }
 }

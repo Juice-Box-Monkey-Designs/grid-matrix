@@ -1,6 +1,6 @@
 {
   "name": "@jbmd/grid-matrix",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A helpful react grid component",
   "scripts": {
     "prepublishOnly": "npm run build",

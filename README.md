@@ -44,7 +44,7 @@ npm install
 then run 
 
 ```
-npm storybook
+npm run storybook
 ```
 
 This should open your primary website to `localhost:6006` so that you can interact with the various pieces of Grid Matrix

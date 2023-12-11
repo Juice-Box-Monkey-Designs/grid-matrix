@@ -75,9 +75,33 @@ const GridComponent: React.FC<GridProps> = ({
   );
 };
 
+/**
+ * Helper component
+ * @param param
+ * @returns 
+ */
+const GridContainmentComponent: React.FC<GridProps> = (props: GridProps) => {
+  const containmentStyle = {
+    ...{
+      width: props.containment?.width,
+      height: props.containment?.height
+    },
+  };
+  return (
+    // @ts-ignore
+    <div style={containmentStyle}>
+      <GridComponent {...props} />
+    </div>
+  )
+}
+
 const Grid = (props: GridProps) => (
   <BreakpointProvider>
-    <GridComponent {...props} />
+    {props?.containment ?
+      <GridContainmentComponent {...props} />
+    :
+      <GridComponent {...props} />
+    }
   </BreakpointProvider>
 );
 

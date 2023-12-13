@@ -2,6 +2,17 @@ import React from "react";
 
 export type parentAlignment = "horizontal" | "vertical";
 
+export interface ContainmentSize {
+    /**
+     * The width of the stacked grid container, ex. "30px", "40%"
+     */
+    width: string;
+    /**
+     * The height of the stacked grid container, ex. "30px", "40%"
+     */
+    height: string;
+};
+
 export interface GridProps {
      /**
      * Unique id
@@ -62,6 +73,11 @@ export interface GridProps {
      * This can be used inside `StackedGrid` to specify on what level each one should render at
      */
     level?: number;
+
+    /**
+     * Specifying the container width and height instead of using an outside div to control it
+     */
+    containment?: ContainmentSize;
 }
 
 export interface GridWithLevelRequiredProps extends GridProps {
@@ -166,6 +182,14 @@ export interface StackedGridProps {
     * ATT: please specify `level` in each grid to render properly
     */
     grids: GridWithLevelRequiredProps[];
+
+    /**
+     * Specifying the container width and height instead of using an outside div to control it
+     * WARNING: if your specify containment inside your Grid level,
+     * please make sure they conform to this containment field on this level
+     * or you may experience alignment issues on your application
+     */
+    containment?: ContainmentSize;
 };
 
 export type Display = "show" | "hide" | "default";

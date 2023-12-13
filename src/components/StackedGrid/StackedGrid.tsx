@@ -33,8 +33,31 @@ const StackedGridComponent: React.FC<StackedGridProps> = ({
   )
 }
 
+/**
+ * Helper component
+ * @param param
+ * @returns 
+ */
+const StackedGridContainmentComponent: React.FC<StackedGridProps> = (props: StackedGridProps) => {
+  const containmentStyle = {
+    ...{
+      width: props.containment?.width,
+      height: props.containment?.height
+    },
+  };
+  return (
+    // @ts-ignore
+    <div style={containmentStyle}>
+      <StackedGridComponent {...props} />
+    </div>
+  )
+}
+
+
+
+
 const StackedGrid = (props: StackedGridProps) => (
-  <StackedGridComponent {...props} />
+  props.containment ? <StackedGridContainmentComponent {...props} /> : <StackedGridComponent {...props} />
 );
 
 export default StackedGrid;

@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, Meta } from "@storybook/react";
 import { object } from '@storybook/addon-knobs';
 import Grid from "./Grid";
 import { GridProps, GridSectionProps } from "../../types/index.types";
@@ -10,13 +10,20 @@ export default {
   title: "GridMatrix/Grid",
   component: Grid,
   tags: ['autodocs'],
-  columnList: { table: { expanded: true } }
-} as ComponentMeta<typeof Grid>;
+  columnList: { table: { expanded: true } },
+  parameters: {
+    docs: {
+      description: {
+        component: "`Grid` is an easy to use grid component to simplify complex grid structures in your React app."
+      }
+    }
+  }
+} as Meta<typeof Grid>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Grid> = (args) => {
   return (
-    <div style={{ width: "400px", height: "400px", background: "yellow" }}>
+    <div style={{ width: "400px", height: "400px", background: "#4F8C46" }}>
       <Grid {...args} />
     </div>
   )
@@ -46,6 +53,13 @@ Default.args = {
   alignment: "horizontal",
   sections: object("sections", defaultSection)
 };
+Default.parameters = {
+  docs: {
+    description: {
+      story: "Basic example to showcase a simple grid with 30%,50% and 20% sections"
+    },
+  },
+}
 
 export const Vertical = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -72,6 +86,13 @@ Vertical.args = {
   alignment: "vertical",
   sections: sections
 };
+Vertical.parameters = {
+  docs: {
+    description: {
+      story: "Default but with an `alignment:vertical` to stack them vertically."
+    },
+  },
+}
 
 export const SubSection = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -110,6 +131,13 @@ SubSection.args = {
   alignment: "vertical",
   sections: subSectionSections
 };
+SubSection.parameters = {
+  docs: {
+    description: {
+      story: "Example of a `subSection` that allows you to pass in an array of `GridSection` inside a `GridSection` inside a `GridSection`. Like Inception but for Grids"
+    },
+  },
+}
 
 export const Spacer = Template.bind({});
 
@@ -134,6 +162,13 @@ Spacer.args = {
   alignment: "horizontal",
   sections: spacerSections
 };
+Spacer.parameters = {
+  docs: {
+    description: {
+      story: "Example of a `Spacer` when your `GridSection` just need a little space from each other. This conforms to your overall height and width of the containment of the `Grid` so you don't have custom margin causing alignment issues."
+    },
+  },
+}
 
 export const BreakPoints = Template.bind({});
 
@@ -154,6 +189,13 @@ BreakPoints.args = {
   sections: defaultSection,
   mdSection: mdSection
 };
+BreakPoints.parameters = {
+  docs: {
+    description: {
+      story: "Example to show a `GridSection` with content that ONLY shows in `md` (between 640 and 768) screensize <br /><br /> <p style='color: green;'>If you can't see it, try adjusting your screensize</p>"
+    },
+  },
+}
 
 export const CustomClass = Template.bind({});
 let customSection: GridSectionProps[] = [
@@ -169,6 +211,13 @@ CustomClass.args = {
   sections: customSection,
   className: "story-custom-style",
 };
+CustomClass.parameters = {
+  docs: {
+    description: {
+      story: "We know sometimes you want to pass in your own classes that do certain things, `Grid` allows this."
+    },
+  },
+}
 
 export const CustomStyle = Template.bind({});
 let customStyleSection: GridSectionProps[] = [
@@ -184,6 +233,13 @@ CustomStyle.args = {
   sections: customStyleSection,
   style: { "boxShadow": "1em 1em turquoise, -1em 0 .4em teal" },
 };
+CustomStyle.parameters = {
+  docs: {
+    description: {
+      story: "Same goes with custom styles, `Grid` allows this. <br /> <br /> <p style='color: red;'>Obviously css rules apply, so if you use `!important` it may affect how `Grid` works for you.</p>"
+    },
+  },
+}
 
 export const Transform = Template.bind({});
 let transformSection: GridSectionProps[] = [
@@ -204,3 +260,35 @@ Transform.args = {
   sections: transformSection,
   transform: "rotate(20deg) scale(0.5)"
 };
+Transform.parameters = {
+  docs: {
+    description: {
+      story: "Example of passing in a custom `transform` prop which conforms to CSS `transform` property"
+    },
+  },
+}
+
+export const Containment = Template.bind({});
+let ContainmentSection: GridSectionProps[] = [
+  {
+    cover: 50,
+    content: <div style={{ width: "100%", height: "100%", background: "#B2FFFF" }}>50% Section in 300px containment inside a 400px, it also supports percents</div>,
+    align: 'bottom'
+  },
+];
+
+Containment.args = {
+  alignment: "horizontal",
+  sections: ContainmentSection,
+  containment: {
+    height: "300px",
+    width: "100%"
+  }
+};
+Containment.parameters = {
+  docs: {
+    description: {
+      story: "Instead of wrapping your `Grid` in a div, you can specify containment `height` and `width` props to do it for you (And yes these can be percents, just string percents like `80%`)"
+    },
+  },
+}

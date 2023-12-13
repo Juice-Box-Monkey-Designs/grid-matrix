@@ -1,11 +1,11 @@
 {
   "name": "@jbmd/grid-matrix",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A helpful react grid component",
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "rollup -c --bundleConfigAsCjs",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 -c .storybook --no-open",
     "build-storybook": "storybook build",
     "test": "jest"
   },

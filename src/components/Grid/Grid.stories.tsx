@@ -94,10 +94,10 @@ Vertical.parameters = {
   },
 }
 
-export const SubSection = Template.bind({});
+export const InnerGrid = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 
-let subSectionSections: GridProps["sections"] = [
+let innerGridSections: GridProps["sections"] = [
   {
     cover: 30,
     content: <div style={{ width: "100%", height: "100%", background: "#F8D800" }}>First Content</div>,
@@ -105,20 +105,22 @@ let subSectionSections: GridProps["sections"] = [
   },
   {
     cover: 50,
-    content: <div style={{ width: "100%", height: "100%", background: "#0396FF" }}>Second Content</div>,
     align: 'top',
-    subSection: [
-      {
-        cover: 30,
-        content: <div style={{ width: "100%", height: "100%", background: "#C9E4DE" }}>subSection first Content</div>,
-        align: "bottom"
-      },
-      {
-        cover: 70,
-        content: <div style={{ width: "100%", height: "100%", background: "#F2C6DE" }}>subSection second Content</div>,
-        align: "bottom"
-      }
-    ]
+    innerGrid: {
+      alignment: "vertical",
+      sections: [
+        {
+          cover: 30,
+          content: <div style={{ width: "100%", height: "100%", background: "#C9E4DE" }}>Second Content - first Content (innerGrid)</div>,
+          align: "bottom"
+        },
+        {
+          cover: 70,
+          content: <div style={{ width: "100%", height: "100%", background: "#F2C6DE" }}>Second Content - second Content (innerGrid)</div>,
+          align: "bottom"
+        }
+      ],
+    }
   },
   {
     cover: 20,
@@ -127,14 +129,14 @@ let subSectionSections: GridProps["sections"] = [
   },
 ];
 
-SubSection.args = {
+InnerGrid.args = {
   alignment: "vertical",
-  sections: subSectionSections
+  sections: innerGridSections
 };
-SubSection.parameters = {
+InnerGrid.parameters = {
   docs: {
     description: {
-      story: "Example of a `subSection` that allows you to pass in an array of `GridSection` inside a `GridSection` inside a `GridSection`. Like Inception but for Grids"
+      story: "Example of a `innerGrid` that allows you to pass `Grid` inside a `Grid` inside a `Grid`. Like Inception but for Grids"
     },
   },
 }

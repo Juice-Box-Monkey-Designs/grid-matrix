@@ -75,11 +75,14 @@ const GridSection: React.FC<GridSectionProps> = (props) => {
       className={`grid-item ${"x-" + xAlign} ${"y-" + yAlign}`}
       style={{ flexBasis: `${props.cover}%`, flexGrow: 0, flexShrink: 0, height: "100%" }}
     >
-      {props.content &&
+      {props.content && !props?.innerGrid &&
         props.content
       }
       {props.subSection && (
         <Grid alignment={props.parentAlignment} sections={props.subSection} />
+      )}
+      {props.innerGrid && (
+        <Grid {...props.innerGrid}  containment={{ height: "100%", width: "100%"}} />
       )}
     </div>
   );

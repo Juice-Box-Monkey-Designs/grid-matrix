@@ -104,7 +104,15 @@ export interface SubSection {
     // TODO: Add `xAlign` and `yAlign`
 }
 
-export interface GridSectionProps {
+export interface GridSectionProps extends GridSectionBaseProps {
+    /**
+     * Inside grid section support (Use for Grid inside Grid cases)
+     * NOTE: When using `innerGrid`, `content` will be IGNORED due to conflicting size and grid handling
+     */
+    innerGrid?: GridProps;
+}
+
+export interface GridSectionBaseProps {
     /**
      * Unique id
      */
@@ -142,10 +150,10 @@ export interface GridSectionProps {
      */
     xAlign?: xAlignValue;
     /**
+     * @deprecated please use `innerGrid`
      * Inside grid section support (Use for Grid inside Grid cases)
      */
-    subSection?: SubSection[]
-    // TODO: Add `xAlign` and `yAlign`
+    subSection?: SubSection[];
     /**
      * Visibility of the section on extra small screens (<320px)
      */

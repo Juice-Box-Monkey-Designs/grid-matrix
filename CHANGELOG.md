@@ -10,7 +10,16 @@ Offical launch of Grid Matrix
 - Support for `Grid` component (more information)
 - Support for `StackedGrid` component (more information)
 
-**0.0.6 CURRENT**
+**0.0.10 CURRENT**
+
+- New `innerGrid` inside `GridSectionProps` allowing you to set grids inside grids without defining a new component inside `content`
+- Deprecated `subSection` inside `GridSectionProps`, replaced with new `innerGrid` for more functionality
+
+**0.0.9**
+
+- Fixed typing issue when using package inside typscript project
+
+**0.0.6**
 
 - Cleaned up storybook with descriptions, fonts, icons and more. Pull it locally to see all the great handy helpers!
 

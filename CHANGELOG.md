@@ -7,8 +7,8 @@ All notable changes to this project will be documented in this file.
 Offical launch of Grid Matrix
 
 :new: - New
-- Support for `Grid` component (more information)
-- Support for `StackedGrid` component (more information)
+- Support for `Grid` component (more information by pulling and running storybook)
+- Support for `StackedGrid` component (more information by pulling and running storybook)
 
 **0.0.10 CURRENT**
 
